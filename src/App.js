@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import SimpleMap from "./Hi";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Index from "./pages/Index";
+import Section from "./pages/Section";
+import Place from "./pages/Place";
+import Photos from "./pages/Photos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{display:'flex',flexWrap:'wrap',width:'100%'}}>
+        <Router>
+            <Routes>
+                <Route path='/' element={<Index/>} />
+                <Route path='/section/:section' element={<Section/>} />
+                <Route path='/place/:id' element={<Place/>} />
+                <Route path='/place/photos/:id' element={<Photos/>} />
+            </Routes>
+        </Router>
     </div>
   );
 }

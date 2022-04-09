@@ -1,0 +1,11 @@
+.chapter{
+    padding: 5px 10px;
+    margin: 10px 5px;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 8px;
+}
+
+.chapter__name {
+    white-space: nowrap;
+    color: #70757a;
+}
