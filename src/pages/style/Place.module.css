@@ -49,28 +49,11 @@
     display: grid;
     justify-items: center;
 }
-.place__secondBlock{
-    display: flex;
-    flex-direction: column;
-}
-.place__secondItem{
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-}
+
 .place__blueIcon{
     width: 24px;
     height: 24px;
     margin-right: 20px;
-}
-.place__secondText{
-    color: #3c4043;
-    font-size: 14px;
-}
-.place__thirdItem{
-    display: flex;
-    align-items: center;
-    padding: 6px 20px;
 }
 .place__photoBlock{
     padding: 16px 20px;

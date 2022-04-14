@@ -5,6 +5,7 @@ import Style from "./UI/box/Style";
 import {useNavigate} from "react-router-dom";
 const MarkerPreview = ({marker}) => {
     const router = useNavigate()
+    // console.log(marker)
     return (
         <div className={classes.markerPreview}>
             <div className={classes.markerPreview__photoBox}>

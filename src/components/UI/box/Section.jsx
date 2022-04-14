@@ -1,12 +1,17 @@
 import React from 'react';
 import classes from './Section.module.css'
 import {useNavigate} from "react-router-dom";
+import state from "../../../state/state";
 const Section = ({section}) => {
     const router = useNavigate()
+    function sectionClick (){
+        state.changeInputValue(section['name'])
+        router(`section/${section['section']}`)
+    }
     return (
         <div
             className={classes.section}
-            onClick={() => router(`section/${section['section']}`)}
+            onClick={() => sectionClick()}
         >
             <img
                 src={section['src']}

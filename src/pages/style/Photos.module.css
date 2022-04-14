@@ -7,6 +7,6 @@
 }
 .photos__sliderimg{
     width: 100vw;
-    height: 300px;
-    object-fit: cover
+    height: 70vh;
+    object-fit: cover;
 }

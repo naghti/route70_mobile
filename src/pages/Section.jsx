@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import PostService from "../API/PostService";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import SectionMap from "../components/maps/SectionMap";
 import classes from './style/Section.module.css'
 import InputName from "../components/UI/box/InputName";
@@ -17,8 +17,10 @@ const Section = () => {
     async function fetchInfo(){
         const SectionMarkers = await PostService.getSectionMarkers(params.section)
         setSectionMarkers(SectionMarkers)
+        console.log(SectionMarkers)
         setLoading(false)
     }
+    const router = useNavigate()
 
     return (
         <div className={classes.section}>
@@ -29,8 +31,10 @@ const Section = () => {
                 :
                 <>
                     <div className={classes.section__header}>
-                        <Style style={{padding: '10px 10px 0'}}>
-                            <InputName/>
+                        <Style style={{padding: '10px'}}>
+                            <InputName
+                                to={'/'}
+                            />
                         </Style>
                         <div className={classes.section__list}>
                             {
@@ -42,7 +46,7 @@ const Section = () => {
                             }
                         </div>
                     </div>
-                    <SectionMap/>
+                    <SectionMap sectionMarkers={sectionMarkers}/>
                     <SectionMarkers sectionMarkers={sectionMarkers}/>
                 </>
             }

@@ -1,11 +1,11 @@
 import React from 'react';
-
-const VertivalBox = ({children,...props}) => {
+import classes from './VerticalBox.module.css'
+const VerticalBox = ({children,...props}) => {
     return (
-        <div {...props}>
+        <div className={classes.verticalBox} {...props}>
             {children}
         </div>
     );
 };
 
-export default VertivalBox;
+export default VerticalBox;

@@ -8,17 +8,20 @@ import Style from "../components/UI/box/Style";
 const Index = () => {
     let [loading,setLoading] = useState(true)
     let [sections,setSections] = useState(false)
+    let [markers,setMarkers] = useState(undefined)
     useEffect(() => {
         fetchInfo()
     }, [])
     async function fetchInfo(){
         const Sections = await PostService.getSections()
+        const Markers = await PostService.getMarkersCoordinats()
         setSections(Sections)
+        setMarkers(Markers)
         setLoading(false)
     }
 
     return (
-        <div className={classes.index} >
+        <div className={classes.index}>
             {
                 loading ?
                     <div></div>
@@ -36,7 +39,7 @@ const Index = () => {
                                 }
                             </div>
                         </div>
-                        <IndexMap/>
+                        <IndexMap markers={markers}/>
                     </>
             }
         </div>
