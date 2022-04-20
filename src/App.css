@@ -22,10 +22,10 @@ a{
   opacity: 0;
   transition: opacity 500ms ease-in;
 }
-/*.gm-control-active,*/
-/*.gm-fullscreen-control*/
-/*.gmnoprint,*/
-/*.gm-bundled-control,*/
-/*.gm-bundled-control-on-bottom{*/
-/*  display: none!important;*/
-/*}*/
+.gm-control-active,
+.gm-fullscreen-control
+.gmnoprint,
+.gm-bundled-control,
+.gm-bundled-control-on-bottom{
+  display: none!important;
+}

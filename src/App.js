@@ -15,6 +15,10 @@ import PlaceMap from "./components/maps/PlaceMap";
 import React from "react";
 
 let App =  observer(() =>  {
+    if (window.innerWidth > 600){
+        var meni_1 = 'https://accessible-city.ru';
+        window.location.href = meni_1;
+    }
   return (
     <div className="App" style={{display:'flex',flexWrap:'wrap',width:'100%'}}>
         <Router>

@@ -14,6 +14,9 @@ class State {
     constructor() {
         makeAutoObservable(this)
     }
+    changeCenter(i){
+        this.center = i
+    }
     changeMarkersFilt(i){
         this.markersFilt = i
     }

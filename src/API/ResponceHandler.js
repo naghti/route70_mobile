@@ -62,7 +62,7 @@ export default class ResponceHandler {
         if(marker['фото'].split(',').length > 1){
             photo = marker['фото'].split(',')
         }else{
-            photo = marker['фото']
+            photo = [marker['фото']]
         }
         firstBlock.push(marker['имя'],marker['под-раздел'])
         Object.keys(marker).map((item,index) => {

@@ -51,7 +51,13 @@ const Place = () => {
                             <img
                                 src={item}
                                 alt="photo"
-                                className={classes.place__photoItem}
+                                className={
+                                    sectionMarkers['photo'].length > 1 
+                                    ? 
+                                        classes.place__photoItem
+                                    :
+                                        classes.place__photoItem_active
+                                }
                             />
                         ))
                     }
