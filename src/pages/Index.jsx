@@ -24,7 +24,7 @@ const Index = () => {
         <div className={classes.index}>
             {
                 loading ?
-                    <div></div>
+                    <div>загрузка</div>
                     :
                     <>
                         <div className={classes.index__header}>

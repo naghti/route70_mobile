@@ -21,7 +21,18 @@ const Section = () => {
         setLoading(false)
     }
     const router = useNavigate()
+    let subsections = new Set();
+    let subsectionsArr = [];
+    if(!loading){
+        console.log(sectionMarkers)
+        sectionMarkers.map(marker => {
+            subsections.add(marker['под-раздел'])
+        })
+        subsections.forEach((value, valueAgain, set) => {
+            subsectionsArr.push(value);
+        });
 
+    }
     return (
         <div className={classes.section}>
             {
@@ -38,9 +49,9 @@ const Section = () => {
                         </Style>
                         <div className={classes.section__list}>
                             {
-                                sectionMarkers.map(sectionMarker => (
+                                subsectionsArr.map(item => (
                                     <Chapter
-                                        name={sectionMarker['под-раздел']}
+                                        name={item}
                                     />
                                 ))
                             }
