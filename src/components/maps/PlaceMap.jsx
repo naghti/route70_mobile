@@ -13,7 +13,6 @@ const PlaceMap = observer(({marker}) => {
         'под-раздел' : marker.firstBlock[1],
         'улица' : marker.secondBlock[1][1],
     }
-    console.log(marker)
     const router = useNavigate()
     function clickMarker(){
         state.changeOpenMarker(undefined)
@@ -25,10 +24,10 @@ const PlaceMap = observer(({marker}) => {
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA' }}
                 center={{
-                    lat: state.center.lat,
-                    lng: state.center.lng,
+                    lat: +marker.coordinats.split(',')[0],
+                    lng: +marker.coordinats.split(',')[1],
                 }}
-                defaultZoom={13}
+                defaultZoom={18}
             >
 
                 {
