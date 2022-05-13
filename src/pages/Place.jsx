@@ -13,8 +13,9 @@ import addPhoto from '../image/addPhoto.jpg'
 import shareImage from '../image/share.png'
 import phone from '../image/phone.png'
 import openOnMap from '../image/openOnMap.png'
+import { observer } from 'mobx-react-lite';
 
-const Place = () => {
+const Place = observer(() => {
     const params = useParams()
     const router = useNavigate()
 
@@ -33,9 +34,8 @@ const Place = () => {
         navigator.clipboard.writeText(document.location.href)
         alert('Ссылка на страницу скопированна в буфер обмена')
     }
-
     return (
-        <div className={classes.place}>
+        <div className={classes.place} >
         {
             loading ?
                 <div></div>
@@ -43,7 +43,7 @@ const Place = () => {
             <>
                 <Header
                     name={sectionMarkers['firstBlock'][0]}
-                    route={-1}
+                    route={`/section/${params.section}`}
                 />
                 <div className={classes.place__photos}>
                     {
@@ -226,6 +226,6 @@ const Place = () => {
         }
         </div>
     );
-};
+});
 
 export default Place;

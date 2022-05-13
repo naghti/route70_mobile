@@ -17,6 +17,7 @@ a{
 }
 .item-exit {
   opacity: 1;
+
 }
 .item-exit-active {
   opacity: 0;
@@ -28,4 +29,10 @@ a{
 .gm-bundled-control,
 .gm-bundled-control-on-bottom{
   display: none!important;
+}
+.mapboxgl-map{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow-y: hidden;
 }

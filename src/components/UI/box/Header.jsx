@@ -6,14 +6,17 @@ import searchImage from '../../../image/search.png'
 import state from "../../../state/state";
 const Header = ({name,route}) => {
     const router = useNavigate()
-
+    function back(){
+        state.changeOpenMarker(undefined)
+        router(route)
+    }
     return (
         <div className={classes.header}>
             <img
                 src={backImage}
                 alt="back"
                 className={classes.header__icon}
-                onClick={() => router(route)}
+                onClick={() => back()}
             />
             <p className={classes.header__name}>
                 {name}

@@ -2,10 +2,11 @@ import React from 'react';
 import classes from './style/MarkerPreview.module.css'
 import BlueButton from "./UI/button/BlueButton";
 import Style from "./UI/box/Style";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 const MarkerPreview = ({marker}) => {
+    const params = useParams()
     const router = useNavigate()
-    // console.log(marker)
+    console.log(params)
     return (
         <div className={classes.markerPreview}>
             <div className={classes.markerPreview__photoBox}>
@@ -27,7 +28,7 @@ const MarkerPreview = ({marker}) => {
                 </h4>
                 <div>
                     <BlueButton
-                        onClick={() => router(`/place/${marker['id']}`)}
+                        onClick={() => router(`/${params.section}/${marker['id']}`)}
                     >
                         Открыть метку
                     </BlueButton>

@@ -10,6 +10,7 @@ export default class ResponceHandler {
     }
 
     static SectionMarkers(responce){
+        console.log(responce)
         let result = responce.map(marker => {
             if (marker['номер телефона'] == null){
                 delete marker['номер телефона']
@@ -79,6 +80,7 @@ export default class ResponceHandler {
         let result = {
             id: marker['id'],
             coordinats: marker['координаты'],
+            section: marker['раздел'],
             photo: photo,
             dopBlock: marker['номер телефона'],
             firstBlock: firstBlock,

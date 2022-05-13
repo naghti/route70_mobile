@@ -3,6 +3,7 @@ import classes from './Section.module.css'
 import {useNavigate} from "react-router-dom";
 import state from "../../../state/state";
 const Section = ({section}) => {
+    console.log(section.section)
     const router = useNavigate()
     function sectionClick (){
         state.changeInputValue(section['name'])

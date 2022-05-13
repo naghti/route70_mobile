@@ -20,7 +20,7 @@ let App =  observer(() =>  {
         window.location.href = meni_1;
     }
   return (
-    <div className="App" style={{display:'flex',flexWrap:'wrap',width:'100%'}}>
+    <div className="App" style={{display:'flex',flexWrap:'wrap',width:'100%', height: state.openMarker != undefined ? '100vh' : '100%',overflow: state.openMarker != undefined ? 'hidden' : 'auto'}}>
         <Router>
             <TransitionGroup>
                 {
@@ -49,7 +49,7 @@ let App =  observer(() =>  {
                         :
                         <></>
                 }{
-                    state.openMarker != undefined
+                    state.openMarker != undefined && state.openMarker != false
                         ?
                         <CSSTransition
                             key={2}
@@ -67,8 +67,8 @@ let App =  observer(() =>  {
             <Routes>
                 <Route path='/' element={<Index/>} />
                 <Route path='/section/:section' element={<Section/>} />
-                <Route path='/place/:id' element={<Place/>} />
-                <Route path='/place/photos/:id' element={<Photos/>} />
+                <Route path='/:section/:id' element={<Place/>} />
+                <Route path='/:section/photos/:id' element={<Photos/>} />
             </Routes>
         </Router>
     </div>
