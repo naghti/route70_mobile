@@ -83,6 +83,7 @@ const SectionMap = observer(({sectionMarkers}) => {
                 ]);
             }
         });
+        state.changeLoader(false)
     };
 
     function markersFilter(marker){

@@ -36,3 +36,6 @@ a{
   position: absolute;
   overflow-y: hidden;
 }
+.mapboxgl-marker {
+  z-index: 0!important;
+}

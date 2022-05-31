@@ -13,6 +13,7 @@ import {observer} from "mobx-react-lite";
 import state from "./state/state";
 import PlaceMap from "./components/maps/PlaceMap";
 import React from "react";
+import Loader from './components/Loader';
 
 let App =  observer(() =>  {
     if (window.innerWidth > 600){
@@ -59,6 +60,19 @@ let App =  observer(() =>  {
                             <PlaceMap
                                 marker={state.openMarker}
                             />
+                        </CSSTransition>
+                        :
+                        <></>
+                }
+                {
+                    state.loader
+                        ?
+                        <CSSTransition
+                            key={2}
+                            timeout={200}
+                            classNames="item"
+                        >
+                            <Loader/>
                         </CSSTransition>
                         :
                         <></>

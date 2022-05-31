@@ -18,17 +18,20 @@ import { observer } from 'mobx-react-lite';
 const Place = observer(() => {
     const params = useParams()
     const router = useNavigate()
-
     let [loading,setLoading] = useState(true)
     let [sectionMarkers,setSectionMarkers] = useState()
     useEffect(() => {
+        state.changeLoader(true)
         fetchInfo()
     }, [])
+
     async function fetchInfo(){
         const Marker = await PostService.getMarker(params.id)
         setSectionMarkers(Marker)
         console.log(Marker)
         setLoading(!loading)
+        state.changeLoader(false)
+
     }
     function share(){
         navigator.clipboard.writeText(document.location.href)

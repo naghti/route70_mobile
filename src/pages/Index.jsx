@@ -5,7 +5,11 @@ import PostService from "../API/PostService";
 import Section from "../components/UI/box/Section";
 import classes from './style/Index.module.css'
 import Style from "../components/UI/box/Style";
+import state from '../state/state';
 const Index = () => {
+    useEffect(() => {
+        state.changeLoader(true)
+    },[])
     let [loading,setLoading] = useState(true)
     let [sections,setSections] = useState(false)
     let [markers,setMarkers] = useState(undefined)

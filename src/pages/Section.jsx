@@ -7,11 +7,13 @@ import InputName from "../components/UI/box/InputName";
 import Style from "../components/UI/box/Style";
 import Chapter from "../components/UI/box/Chapter";
 import SectionMarkers from "../components/SectionMarkers";
+import state from '../state/state';
 const Section = () => {
     let [sectionMarkers,setSectionMarkers] = useState()
     let [loading,setLoading] = useState(true)
     const params = useParams()
     useEffect(() => {
+        state.changeLoader(true)
         fetchInfo()
     }, [])
     async function fetchInfo(){

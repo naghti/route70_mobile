@@ -5,7 +5,7 @@ const Input = ({style}) => {
     return (
         <div className={classes.input} style={style}>
             <img
-                src="https://img.icons8.com/ultraviolet/80/000000/google-maps-new.png" alt="icon"
+                src="https://sun9-87.userapi.com/s/v1/if2/YKfZcuQ19YvBc1Lt1j8prfO6RR4Nnp7yJvqQefWbgJ7MdWYUTCrQvBsCpvq4F7fbMwGj_ovVl7NTPiR1EWR47ma3.jpg?size=80x80&quality=96&type=album" alt="icon"
                 className={classes.input__image}
             />
             <p

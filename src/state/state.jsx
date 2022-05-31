@@ -10,12 +10,16 @@ class State {
     }
     settings = false
     openMarker = undefined
+    loader = false
     markersFilter = undefined
     constructor() {
         makeAutoObservable(this)
     }
     changeCenter(i){
         this.center = i
+    }
+    changeLoader(i){
+        this.loader = i
     }
     changeMarkersFilt(i){
         this.markersFilt = i

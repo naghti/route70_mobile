@@ -41,7 +41,7 @@
 
 
 
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import ReactMapboxGl from "react-mapbox-gl";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
@@ -69,6 +69,7 @@ const IndexMap = observer(({markers}) => {
                 ]);
             }
         });
+        state.changeLoader(false)
     };
   return (
       <div>

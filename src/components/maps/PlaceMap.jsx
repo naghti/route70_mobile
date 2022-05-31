@@ -77,6 +77,7 @@ const Map = ReactMapboxGl({
 });
 
 const PlaceMap = observer(({marker}) => {
+
     console.log(marker)
     let markeri = {
         'id' : marker.id,
